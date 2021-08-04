@@ -26,5 +26,11 @@ describe('Thermostat', () => {
       thermostat.down()
       expect(thermostat.currentTemperature()).toEqual(19)
     });
+    it('should not be able to go under 10 degrees', () => {
+      for(let i = 0; i < 12; i ++) {
+        thermostat.down()
+      }
+      expect(thermostat.currentTemperature()).toEqual(10)
+    });
   });
 });

@@ -19,6 +19,19 @@ describe('Thermostat', () => {
       thermostat.up()
       expect(thermostat.currentTemperature()).toEqual(21)
     });
+    it("won't go above 25 if power save is on ", () => {
+      for(let i = 0; i < 6; i ++) {
+        thermostat.up()
+      }
+      expect(thermostat.currentTemperature()).toEqual(25)
+    });
+    it("won't go above 32 if power save is off", () => {
+      thermostat.switchPowerSave()
+      for(let i = 0; i < 23; i ++) {
+        thermostat.up()
+      }
+      expect(thermostat.currentTemperature()).toEqual(32)
+    });
   });
 
   describe('down', () => {

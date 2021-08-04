@@ -7,8 +7,15 @@ class Thermostat {
     return this._temperature;
   }
   up() {
+    if(this._temperature === 25 && this._powerSave === true) {
+      return
+    } else if(this._temperature === 32 && this._powerSave === false) {
+      return
+    } else {
     this._temperature += 1
+    }
   }
+  
   down() {
     if(this._temperature === 10) {
       return

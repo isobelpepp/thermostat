@@ -71,6 +71,21 @@ describe('Thermostat', () => {
       thermostat.up()
       thermostat.reset()
       expect(thermostat.currentTemperature()).toEqual(20)
-    })
-  })
+    });
+  });
+
+  describe('currentUsage', () => {
+    it('returns low usage if below 18', () => {
+      for(let i = 0; i < 5; i ++) { thermostat.down() }
+      expect(thermostat.currentUsage()).toEqual('low-usage')
+    });
+    it('returns medium usage if between 18 and 25', () => {
+      expect(thermostat.currentUsage()).toEqual('medium-usage')
+    });
+    it('returns high usage if above 25', () => {
+      thermostat.switchPowerSave()
+      for(let i = 0; i < 7; i ++) { thermostat.up() }
+      expect(thermostat.currentUsage()).toEqual('high-usage')
+    });
+  });
 });

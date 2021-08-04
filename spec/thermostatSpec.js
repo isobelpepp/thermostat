@@ -62,6 +62,15 @@ describe('Thermostat', () => {
       thermostat.switchPowerSave()
       thermostat.switchPowerSave()
       expect(thermostat.isPowerSaveOn()).toEqual(true)
+    });
+  });
+
+  describe('reset', () => {
+    it('resets to 20', () => {
+      thermostat.up()
+      thermostat.up()
+      thermostat.reset()
+      expect(thermostat.currentTemperature()).toEqual(20)
     })
   })
 });

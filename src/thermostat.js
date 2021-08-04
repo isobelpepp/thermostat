@@ -2,10 +2,12 @@ class Thermostat {
   constructor() {
     this._temperature = 20
     this._powerSave = true
+    this.MINIMUM_TEMPERATURE = 10
   }
   currentTemperature() {
     return this._temperature;
   }
+
   up() {
     if(this._temperature === 25 && this._powerSave === true) {
       return
@@ -15,13 +17,18 @@ class Thermostat {
     this._temperature += 1
     }
   }
-  
+
   down() {
-    if(this._temperature === 10) {
+    if(this.isMinimumTemperature()) {
       return
     }
     this._temperature -= 1
   }
+
+  isMinimumTemperature() {
+    return this._temperature === this.MINIMUM_TEMPERATURE;
+  }
+
   isPowerSaveOn() {
     return this._powerSave
   }
@@ -31,5 +38,9 @@ class Thermostat {
     } else {
       this._powerSave = true
     }
+  }
+
+  reset() {
+    this._temperature = 20 
   }
 }

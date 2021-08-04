@@ -33,4 +33,22 @@ describe('Thermostat', () => {
       expect(thermostat.currentTemperature()).toEqual(10)
     });
   });
+
+  describe('isPowerSaveOn', () => {
+    it('defaults to true', () => {
+      expect(thermostat.isPowerSaveOn()).toEqual(true)
+    });
+  });
+
+  describe('switchPowerSave', () => {
+    it('switches power save off if on', () => {
+      thermostat.switchPowerSave()
+      expect(thermostat.isPowerSaveOn()).toEqual(false)
+    });
+    it('switches power save on if off', () => {
+      thermostat.switchPowerSave()
+      thermostat.switchPowerSave()
+      expect(thermostat.isPowerSaveOn()).toEqual(true)
+    })
+  })
 });

@@ -37,6 +37,9 @@ class Thermostat {
   switchPowerSave() {
     if(this._powerSave === true) {
       this._powerSave = false
+    } else if (this._powerSave === false & this._temperature > 25) {
+      this._powerSave = true
+      this._temperature = 25
     } else {
       this._powerSave = true
     }

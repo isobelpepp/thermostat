@@ -45,3 +45,15 @@
 .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
   right: 0px; 
 }
+
+#current-usage.low-usage {
+  color: green;
+}
+
+#current-usage.medium-usage {
+  color: orange;
+}
+
+#current-usage.high-usage {
+  color: red;
+}

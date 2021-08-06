@@ -46,14 +46,115 @@
   right: 0px; 
 }
 
+#current-usage {
+  position: absolute;
+  margin: 1em auto;
+  width: 2em;
+  height: 2em;
+  background-color: orange;
+  left: calc((80% - 20em) / 2);
+  top: calc((65% - 15em) / 2);
+}
+
 #current-usage.low-usage {
-  color: green;
+  background-color: green;
 }
 
 #current-usage.medium-usage {
-  color: orange;
+  background-color: orange;
 }
 
 #current-usage.high-usage {
-  color: red;
+  background-color: red;
 }
+
+.bigbox {
+  border: 1px solid green ;
+}
+
+.outer-box {
+  text-align: justify;
+  position: relative;
+  margin: 1em auto;
+  width: 40em;
+  height: 30em;
+  border: solid 1px black;
+  background: silver;
+  z-index: 1;
+}
+
+
+.inner-box {
+  text-align: center;
+  position: absolute;
+  left: calc((75% - 20em) / 2);
+  top: calc((90% - 15em) / 2);
+  width: 30em;
+  height: 17em;
+  border: solid 1px black;
+  background:black;
+  color: white
+}
+
+#temperature-up {
+
+  width: 5%;
+  margin-left:80%;
+  margin-right:0%;
+  position: absolute;
+  bottom: 50px;
+
+}
+
+#temperature-down {
+
+  width: 5%;
+  margin-left:70%;
+  margin-right:0%;
+  position: absolute;
+  bottom: 50px;
+
+}
+
+#temperature-reset {
+
+  width: 10%;
+  margin-left:40%;
+  margin-right:0%;
+  position: absolute;
+  bottom: 50px;
+
+}
+
+#current-city{
+
+  width: 12%;
+  margin-left:5%;
+  margin-right:0%;
+  position: absolute;
+  bottom: 50px;
+
+}
+
+.onoffswitch {
+  margin-left:80%;
+  margin-right:0%;
+  position: absolute;
+  top: 20px;
+}
+
+#temperature {
+  margin-left:35%;
+  margin-right:0%;
+  position: absolute;
+  top: 5px;
+}
+
+#outside-temperature {
+  color: white
+}
+
+#current-temperature {
+  color: white
+}
+
